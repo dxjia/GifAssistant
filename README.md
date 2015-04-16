@@ -15,10 +15,7 @@ Android没有直接用于显示gif图片的原生控件（webview除外），加
 7.圆角菜单<br>
 
 #程序截图
-![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/1.png)
-![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/2.png)
-![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/3.png)
-![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/4.png)
-![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/5.png)
-![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/6.png)
+![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/1.png)![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/2.png)
+![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/3.png)![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/4.png)
+![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/5.png)![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/6.png)
 ![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/7.png)
