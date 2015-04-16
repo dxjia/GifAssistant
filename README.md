@@ -14,3 +14,11 @@ Android没有直接用于显示gif图片的原生控件（webview除外），加
 6.提供压缩率、帧率已经residemenu背景设置<br>
 7.圆角菜单<br>
 
+#程序截图
+![image](https://github.com/dxjia/GifAssitant/raw/master/screenshot/Screenshot_2015-04-16-16-56-59.jpeg)
+![image](https://github.com/dxjia/GifAssitant/raw/master/screenshot/Screenshot_2015-04-16-16-57-17.jpeg)
+![image](https://github.com/dxjia/GifAssitant/raw/master/screenshot/Screenshot_2015-04-16-16-57-24.jpeg)
+![image](https://github.com/dxjia/GifAssitant/raw/master/screenshot/Screenshot_2015-04-16-16-57-33.jpeg)
+![image](https://github.com/dxjia/GifAssitant/raw/master/screenshot/Screenshot_2015-04-16-16-57-50.jpeg)
+![image](https://github.com/dxjia/GifAssitant/raw/master/screenshot/Screenshot_2015-04-16-16-58-00.jpeg)
+![image](https://github.com/dxjia/GifAssitant/raw/master/screenshot/Screenshot_2015-04-16-16-58-22.jpeg)
