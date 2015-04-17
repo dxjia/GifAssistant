@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+  <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+   <com.ryanharter.viewpager.ViewPager
+        android:id="@+id/navigation_welcome_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+   <com.chenupt.springindicator.SpringIndicator
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:siTextSize="18sp"
+        app:siIndicatorColors="@array/indicator_colors"
+        app:siTextColor="@color/colorPrimaryDark"
+        app:siSelectedTextColor="@android:color/white"
+        app:siIndicatorColor="@color/colorPrimary"
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp" />
+   
+     <FrameLayout
+         android:id="@+id/skip_backgroud_area"
+         android:layout_width="120dp"
+         android:layout_height="90dp"
+         android:layout_gravity="bottom|right"
+         android:background="@mipmap/skip_backgroud">
+         <Button 
+             android:layout_width="36dp"
+             android:layout_height="34dp"
+             android:id="@+id/skip_wlecom_button"
+             android:background="@drawable/skip_button"
+             android:layout_gravity="bottom|right"/>
+   </FrameLayout>
+   </FrameLayout>
+  
+</LinearLayout>

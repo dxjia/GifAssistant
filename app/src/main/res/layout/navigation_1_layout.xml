@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/graywhite"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/nav_1_static_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25.0dip"
+        android:src="@mipmap/nav_1_top_static_image" />
+
+    <RelativeLayout
+        android:id="@+id/center_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" >
+
+        <ImageView
+            android:id="@+id/nav_1_time_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="180.0dip"
+            android:layout_marginTop="53.0dip"
+            android:background="@drawable/nav_1_time_show_animation" />
+
+        <ImageView
+            android:id="@+id/nav_1_battery_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nav_1_time_show"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30.0dip"
+            android:src="@mipmap/nav_1_battery_image"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/nav_1_watch_static_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/nav_1_watch_static_image"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/nav_1_note_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nav_1_watch_static_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20.0dip"
+            android:src="@mipmap/nav_1_note_text"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+    <com.wind.gifassistant.views.gifview.GifView
+        android:id="@+id/gif_product" 
+		android:layout_width="150dp"
+		android:layout_height="150dp" 
+		android:layout_margin="5dp"/>
+
+	<LinearLayout android:orientation="vertical"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:paddingTop="25dp"
+		android:layout_margin="5dp">
+		<TextView android:id="@+id/gif_product_name" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:textSize="15dp"
+			android:textColor="@color/black"
+			android:layout_margin="2dp" />
+
+		<TextView android:id="@+id/gif_product_created_time" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:textSize="15dp"
+			android:textColor="@color/black"
+			android:layout_margin="2dp" />
+
+		<TextView android:id="@+id/gif_product_file_size" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:textSize="15dp"
+			android:textColor="@color/black"
+			android:layout_margin="2dp" />
+
+		</LinearLayout>
+
+</LinearLayout>

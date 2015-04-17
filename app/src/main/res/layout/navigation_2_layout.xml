@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/graywhite"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/center_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" >
+
+        <ImageView
+            android:id="@+id/nav_2_top_static"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="25.0dip"
+            android:src="@mipmap/nav_2_top_static" />
+
+        <ImageView
+            android:id="@+id/nav_2_static_backgroud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nav_2_top_static"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5.0dip"
+            android:src="@mipmap/nav_2_static_backgroud" />
+
+        <ImageView
+            android:id="@+id/nav_2_everything_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nav_2_top_static"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/nav_2_everything_show"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/nav_2_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nav_2_static_backgroud"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20.0dip"
+            android:src="@mipmap/nav_2_text" />
+    </RelativeLayout>
+
+</LinearLayout>

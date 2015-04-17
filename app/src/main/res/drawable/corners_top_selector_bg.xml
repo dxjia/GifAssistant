@@ -1,0 +1,5 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:drawable="@drawable/corners_top_pressed_bg" />
+    <item android:state_focused="true" android:drawable="@drawable/corners_top_bg" />
+    <item android:drawable="@drawable/corners_top_bg" />
+</selector>
