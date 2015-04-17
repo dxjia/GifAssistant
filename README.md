@@ -30,7 +30,7 @@ dependencies {
 }
 ```
 <br>
-其中的 ```java compile 'com.android.support:appcompat-v7:21.0.0' ``` 与你的target sdkversion相匹配，如若你的环境是19，那么这里就是 v7:21<br>
+其中的 ```java compile 'com.android.support:appcompat-v7:21.0.0' ``` 与你的target sdkversion相匹配，如若你的环境是19，那么这里就是 v7:19<br>
 
 #程序截图
 ![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/1.png)
