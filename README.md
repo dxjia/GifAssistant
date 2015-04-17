@@ -15,21 +15,22 @@ Android没有直接用于显示gif图片的原生控件（webview除外），加
 7.圆角菜单<br>
 
 #程序编译
-1.使用git clone下载项目到你的本地；
-2.使用Android Studio - Open an existing Android Studio project，打开clone下来的工程；
-3.在local.properties文件中增加你的NDK路径
+1.使用git clone下载项目到你的本地；<br>
+2.使用Android Studio - Open an existing Android Studio project，打开clone下来的工程；<br>
+3.在local.properties文件中增加你的NDK路径<br>
   ```xml
   ndk.dir=D\:\\android-ndk
-  ```xml
-4.build，如有error，请根据提示修改你的compileSdkVersion buildToolsVersion targetSdkVersion等，并保持app/build.gradle内的
+  ```
+4.build，如有error，请根据提示修改你的compileSdkVersion buildToolsVersion targetSdkVersion等，并保持app/build.gradle内的<br>
 ```java
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:21.0.0'
     compile files('libs/nineoldandroids-library-2.4.0.jar')
 }
-```java
-其中的 ```java compile 'com.android.support:appcompat-v7:21.0.0' ```java 与你的target sdkversion相匹配，如若你的环境是19，那么这里就是 v7:21
+```
+<br>
+其中的 ```java compile 'com.android.support:appcompat-v7:21.0.0' ``` 与你的target sdkversion相匹配，如若你的环境是19，那么这里就是 v7:21<br>
 
 #程序截图
 ![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/1.png)
