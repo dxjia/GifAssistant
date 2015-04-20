@@ -1,12 +1,12 @@
 package com.special.ResideMenu;
 
-import com.wind.gifassistant.R;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.wind.gifassistant.R;
 
 /**
  * User: special
@@ -31,6 +31,7 @@ public class ResideMenuItem extends LinearLayout{
         initViews(context);
         iv_icon.setImageResource(icon);
         tv_title.setText(title);
+        setTitleColorSelector(R.drawable.reside_menu_text_selector);
     }
 
     public ResideMenuItem(Context context, int icon, String title) {
@@ -38,6 +39,7 @@ public class ResideMenuItem extends LinearLayout{
         initViews(context);
         iv_icon.setImageResource(icon);
         tv_title.setText(title);
+        setTitleColorSelector(R.drawable.reside_menu_text_selector);
     }
 
     private void initViews(Context context){
@@ -72,5 +74,15 @@ public class ResideMenuItem extends LinearLayout{
      */
     public void setTitle(String title){
         tv_title.setText(title);
+    }
+
+    /**
+     * set the title color selector
+     *
+     * @param resid
+     */
+    public void setTitleColorSelector(int resid) {
+        //tv_title.setTextColor(resid);
+        //tv_title.setOnClickListener(null);
     }
 }
