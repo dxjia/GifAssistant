@@ -7,4 +7,7 @@ public class AppUtils {
 
     public static final int FILE_TYPE_GIF = 0;
     public static final int FILE_TYPE_VIDEO = 1;
+
+    public static final String KEY_RESIDE_MENU_BACKGROUD = "reside_menu_backgroud";
+
 }

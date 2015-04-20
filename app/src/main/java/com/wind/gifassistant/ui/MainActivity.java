@@ -7,6 +7,8 @@
  */
 package com.wind.gifassistant.ui;
 
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -72,7 +74,13 @@ public class MainActivity extends FragmentActivity  implements View.OnClickListe
     private void setupResideMenu() {
         // attach to current activity;
         resideMenu = new ResideMenu(this);
-        resideMenu.setBackground(R.mipmap.menu_background);
+        // get backgroud image from setting
+        Uri backgroudUri = AppConfigs.getResideMenuConfig(getSharedPreferences(getLocalClassName(), Context.MODE_PRIVATE));
+        if (backgroudUri != null) {
+            resideMenu.setBackground(backgroudUri);
+        } else {
+            resideMenu.setBackground(R.mipmap.menu_background);
+        }
         resideMenu.attachToActivity(this);
         resideMenu.setMenuListener(mResideMenuListener);
 
@@ -147,7 +155,9 @@ public class MainActivity extends FragmentActivity  implements View.OnClickListe
         	}            
         }else if (v == itemExit){
         	if (mCurrentFragmentShow != CURRENT_FRAGMENT_SHOW_SETTINGS_LIST) {
-        	    changeFragment(new SettingFragment());
+                SettingFragment setting = new SettingFragment();
+                setting.setResideMenu(resideMenu);
+        	    changeFragment(setting);
         	    mCurrentFragmentShow = CURRENT_FRAGMENT_SHOW_SETTINGS_LIST;
         	}
         }else if (v == itemSettings){

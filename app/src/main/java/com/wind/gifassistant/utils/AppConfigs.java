@@ -6,9 +6,12 @@
  */
 package com.wind.gifassistant.utils;
 
-import java.io.File;
-
+import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Environment;
+import android.text.TextUtils;
+
+import java.io.File;
 
 /**
  *
@@ -132,4 +135,15 @@ public class AppConfigs {
 		
 		return file.getAbsolutePath();
 	}
+
+    public static Uri getResideMenuConfig(SharedPreferences sp) {
+        if (sp != null) {
+            String uriString =sp.getString(AppUtils.KEY_RESIDE_MENU_BACKGROUD, null);
+            if(TextUtils.isEmpty(uriString)) {
+                return null;
+            }
+            return Uri.parse(uriString);
+        }
+        return null;
+    }
 }
