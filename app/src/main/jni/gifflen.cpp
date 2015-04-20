@@ -962,6 +962,7 @@ void NeuQuant::learn() {
 		if (p >= (unsigned int *) lim)
 			p -= lengthcount;
 		*/
+		// add this to fix exception by dxjia
 		if (p >= (unsigned int *)lim)
 			p = (unsigned int*)thepicture;
 
