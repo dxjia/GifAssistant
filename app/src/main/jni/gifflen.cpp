@@ -956,10 +956,14 @@ void NeuQuant::learn() {
 			alterneigh(rad, j, b, g, r); /* alter neighbours */
 
 		p += step;
-		/*if (p >= (unsigned int *) lim)
-			p -= lengthcount;*/
+		/**
+		 * drop here by dxjia 2015-04-20, use thepicture instead!
+		 * to fix the oom exception
+		if (p >= (unsigned int *) lim)
+			p -= lengthcount;
+		*/
 		if (p >= (unsigned int *)lim)
-            p = (unsigned int*)thepicture;
+			p = (unsigned int*)thepicture;
 
 		i++;
 		if (i % delta == 0) {
