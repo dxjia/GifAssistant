@@ -31,28 +31,7 @@ public class AppConfigs {
 		// TODO Auto-generated constructor stub
 	}
 
-	// Root path
-	public static final String APP_ROOT_DIRECTORY_NAME = "gif_assistant";
-	public static final String APP_ABSOLUTE_ROOT_PATH = Environment
-			.getExternalStorageDirectory().toString() + "/" + APP_ROOT_DIRECTORY_NAME;
 
-	// gif 作品库
-	public static final String GIF_PRODUCTS_FOLDER_NAME = "products";
-	public static final String GIF_PRODUCTS_FOLDER_PATH = APP_ABSOLUTE_ROOT_PATH + "/" + GIF_PRODUCTS_FOLDER_NAME;
-
-	// videos folder, maybe not be needed
-	public static final String VIDEOS_FOLDER_NAME = "videos";
-	public static final String VIDEOS_FOLDER_PATH = APP_ABSOLUTE_ROOT_PATH + "/" + VIDEOS_FOLDER_NAME;
-	
-	// crash path
-	public static final String APP_CRASH_FOLDER_NAME = "crash_log";
-	public static final String APP_CRASH_PATH = APP_ABSOLUTE_ROOT_PATH  + "/" + APP_CRASH_FOLDER_NAME;
-	
-	// temp file folder
-	public static final String APP_GIF_TEMP_FILES_FOLDER_NAME = "temp_files";
-	public static final String APP_GIF_TEMP_FILES_FOLDER_PATH = APP_ABSOLUTE_ROOT_PATH + "/" + APP_GIF_TEMP_FILES_FOLDER_NAME;
-
-	public static final String KEY_PATH = "file_path";
 
 	// 检查主要的几个目录，没有的话就创建
 	public static void checkAndCreateNecessaryFolders() {
@@ -63,25 +42,25 @@ public class AppConfigs {
 		}
 
 		// 程序根目录
-		File file = new File(APP_ABSOLUTE_ROOT_PATH);
+		File file = new File(AppUtils.APP_ABSOLUTE_ROOT_PATH);
 		if (!file.exists()) {
 			file.mkdir();
 		}
 
 		// Gif 图片作品保存目录
-		file = new File(GIF_PRODUCTS_FOLDER_PATH);
+		file = new File(AppUtils.GIF_PRODUCTS_FOLDER_PATH);
 		if (!file.exists()) {
 			file.mkdir();
 		}
 		
 		// Videos 目录
-		file = new File(VIDEOS_FOLDER_PATH);
+		file = new File(AppUtils.VIDEOS_FOLDER_PATH);
 		if (!file.exists()) {
 			file.mkdir();
 		}
 		
 		// gif 制作时的中间文件
-		file = new File(APP_GIF_TEMP_FILES_FOLDER_PATH);
+		file = new File(AppUtils.APP_GIF_TEMP_FILES_FOLDER_PATH);
 		if (!file.exists()) {
 			file.mkdir();
 		}
@@ -90,7 +69,7 @@ public class AppConfigs {
 	// 判断程序根目录是否存在
 	public static boolean isAppRootFolderExist() {
 		boolean exist = false;
-		File file = new File(APP_ABSOLUTE_ROOT_PATH);
+		File file = new File(AppUtils.APP_ABSOLUTE_ROOT_PATH);
 		if (file.exists()) {
 			exist = true;
 		}
@@ -117,7 +96,7 @@ public class AppConfigs {
 	// 创建临时文件夹，以要输出的gif名为文件夹名
 	public static String createTempFolder(String name) {
 		// gif 制作时的中间文件
-		File file = new File(APP_GIF_TEMP_FILES_FOLDER_PATH + File.separator + name);
+		File file = new File(AppUtils.APP_GIF_TEMP_FILES_FOLDER_PATH + File.separator + name);
 
 		if (!file.exists()) {
 			file.mkdir();
@@ -129,7 +108,7 @@ public class AppConfigs {
 			
 		}
 		for (int i = 0; i < tempList.length; i++) {
-			File temp = new File(APP_GIF_TEMP_FILES_FOLDER_PATH + File.separator + tempList[i]);
+			File temp = new File(AppUtils.APP_GIF_TEMP_FILES_FOLDER_PATH + File.separator + tempList[i]);
 	        temp.delete();
 		}
 		
@@ -145,5 +124,35 @@ public class AppConfigs {
             return Uri.parse(uriString);
         }
         return null;
+    }
+
+    public static int getGifProductFrameRateSetting(SharedPreferences sp) {
+        int frameRate = 0;
+        if (sp != null) {
+            frameRate = sp.getInt(AppUtils.KEY_GIF_PRODUCT_FRAME_RATE, 10);
+            return frameRate;
+        }
+
+        return frameRate;
+    }
+
+    public static int getGifProductScaleSetting(SharedPreferences sp) {
+        int scale = 0;
+        if (sp != null) {
+            scale = sp.getInt(AppUtils.KEY_GIF_PRODUCT_scale, 2);
+            return scale;
+        }
+
+        return scale;
+    }
+
+    public static int getGifProductDelaySetting(SharedPreferences sp) {
+        int delay = 0;
+        if (sp != null) {
+            delay = sp.getInt(AppUtils.KEY_GIF_PRODUCT_delay, 10);
+            return delay;
+        }
+
+        return delay;
     }
 }

@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.special.ResideMenu.ResideMenu;
@@ -22,6 +23,9 @@ public class SettingFragment extends Fragment {
 
 	private View mParentView;
 	private LinearLayout mBackgroudSetting;
+    private ImageView mBackgroudIcon;
+
+    private LinearLayout mGifFrameRateSetting;
     private ResideMenu mResideMenu;
 
     SharedPreferences mSharedPreferences = null;
@@ -36,18 +40,31 @@ public class SettingFragment extends Fragment {
         setUpViews();
         return mParentView;
 	}
-	
+
 	void setUpViews() {
         mSharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
 		mBackgroudSetting =(LinearLayout) mParentView.findViewById(R.id.reside_menu_backgroud_setting_area);
-		mBackgroudSetting.setOnClickListener(new View.OnClickListener() {
+        mBackgroudIcon = (ImageView) mBackgroudSetting.findViewById(R.id.reside_menu_backgroud_setting_icon);
+        setBackgroudIconThumbail();
+        mBackgroudSetting.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-                showFileChooser();
+                showImageFileChooser();
 			}
 		});
+
+        LinearLayout gifProductsSettingArea = (LinearLayout)mParentView.findViewById(R.id.gif_product_settings_area);
+        mGifFrameRateSetting = (LinearLayout) gifProductsSettingArea.findViewById(R.id.gif_frame_rate_setting_area);
+        if(mGifFrameRateSetting != null) {
+            mGifFrameRateSetting.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    // TODO: show the seek bar dialog
+                    new RangSetDialog(getActivity()).show();
+                }
+            });
+        }
 	}
 
-    private void showFileChooser() {
+    private void showImageFileChooser() {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("image/*");
         intent.addCategory(Intent.CATEGORY_OPENABLE);
@@ -74,5 +91,12 @@ public class SettingFragment extends Fragment {
                 break;
             }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void setBackgroudIconThumbail() {
+        if (mBackgroudIcon != null) {
+            //mBackgroudIcon.setBackground();
+        }
+
     }
 }
