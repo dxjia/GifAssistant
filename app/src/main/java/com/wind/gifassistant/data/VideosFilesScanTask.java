@@ -14,7 +14,7 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
-import com.wind.gifassistant.utils.AppConfigs;
+import com.wind.gifassistant.utils.AppUtils;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -56,7 +56,7 @@ public class VideosFilesScanTask extends AsyncTask<Void, Void, ArrayList<String>
 
 		ArrayList<String> result = new ArrayList<String>();
 		try {
-			getVideoFiles(result, new File(AppConfigs.VIDEOS_FOLDER_PATH));
+			getVideoFiles(result, new File(AppUtils.VIDEOS_FOLDER_PATH));
 		} catch (Exception e) {
 			// TODO: handle exception
 			return null;

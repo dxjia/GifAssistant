@@ -58,7 +58,7 @@ public class SettingFragment extends Fragment {
             mGifFrameRateSetting.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     // TODO: show the seek bar dialog
-                    new RangSetDialog(getActivity()).show();
+                    //new RangSetDialog(getActivity()).show();
                 }
             });
         }

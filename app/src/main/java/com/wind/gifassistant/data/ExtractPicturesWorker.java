@@ -6,8 +6,6 @@
  */
 package com.wind.gifassistant.data;
 
-import java.io.FileOutputStream;
-
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.media.MediaMetadataRetriever;
@@ -15,6 +13,9 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.wind.gifassistant.utils.AppConfigs;
+import com.wind.gifassistant.utils.AppUtils;
+
+import java.io.FileOutputStream;
 
 /**
  * 
@@ -41,7 +42,7 @@ public class ExtractPicturesWorker {
 	// default
 	public static boolean extractPictureToFile(String videoPath, int second) {
 		return extractPictureToFile(videoPath, second,
-				AppConfigs.APP_GIF_TEMP_FILES_FOLDER_PATH, second + "");
+				AppUtils.APP_GIF_TEMP_FILES_FOLDER_PATH, second + "");
 	}
 
 	/*

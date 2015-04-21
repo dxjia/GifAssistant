@@ -1,7 +1,5 @@
 package com.wind.gifassistant.ui;
 
-import java.util.ArrayList;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,8 +19,9 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.special.ResideMenu.ResideMenu;
 import com.wind.gifassistant.R;
 import com.wind.gifassistant.data.VideosFilesScanTask;
-import com.wind.gifassistant.utils.AppConfigs;
 import com.wind.gifassistant.utils.AppUtils;
+
+import java.util.ArrayList;
 
 public class VideosListFragment extends Fragment implements DataLoadCallBack {
 
@@ -85,7 +84,7 @@ public class VideosListFragment extends Fragment implements DataLoadCallBack {
 					return;
 				}
         		Intent intent = new Intent(vContext, VideoPlayerActivity.class);
-        		intent.putExtra(AppConfigs.KEY_PATH, path);
+        		intent.putExtra(AppUtils.KEY_PATH, path);
         		vContext.startActivity(intent);
 			}
 		});

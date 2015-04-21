@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.wind.gifassistant.ui.GifProductsListAdapter;
-import com.wind.gifassistant.utils.AppConfigs;
+import com.wind.gifassistant.utils.AppUtils;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -60,7 +60,7 @@ public class GifProductsScanTask extends AsyncTask<Void, Void, ArrayList<String>
 		}
 		ArrayList<String> result = new ArrayList<String>();
 		try {
-			List<File> gifFiles = getGifFileSortByTime(AppConfigs.GIF_PRODUCTS_FOLDER_PATH);
+			List<File> gifFiles = getGifFileSortByTime(AppUtils.GIF_PRODUCTS_FOLDER_PATH);
 			if (gifFiles != null && gifFiles.size() > 0 ) {
 				for (File file : gifFiles) {
 					result.add(file.getAbsolutePath());					

@@ -1,17 +1,5 @@
 package com.wind.gifassistant.ui;
 
-import java.util.ArrayList;
-
-import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.handmark.pulltorefresh.library.PullToRefreshListView;
-import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
-import com.special.ResideMenu.ResideMenu;
-import com.wind.gifassistant.R;
-import com.wind.gifassistant.data.GifProductsScanTask;
-import com.wind.gifassistant.data.VideosFilesScanTask;
-import com.wind.gifassistant.utils.AppConfigs;
-import com.wind.gifassistant.utils.AppUtils;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,9 +10,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.special.ResideMenu.ResideMenu;
+import com.wind.gifassistant.R;
+import com.wind.gifassistant.data.GifProductsScanTask;
+import com.wind.gifassistant.utils.AppUtils;
+
+import java.util.ArrayList;
 
 public class GifProductsListFragment extends Fragment  implements DataLoadCallBack {
 
@@ -89,7 +86,7 @@ public class GifProductsListFragment extends Fragment  implements DataLoadCallBa
 					return;
 				}
         		Intent intent = new Intent(vContext, GifShowActivity.class);
-        		intent.putExtra(AppConfigs.KEY_PATH, path);
+        		intent.putExtra(AppUtils.KEY_PATH, path);
         		vContext.startActivity(intent);
 			}
 		});

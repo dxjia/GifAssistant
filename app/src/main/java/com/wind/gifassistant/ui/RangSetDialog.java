@@ -20,6 +20,7 @@ public class RangSetDialog extends Dialog {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rang_setting_dialog);
+        setTitle("set value");
     }
 
 }

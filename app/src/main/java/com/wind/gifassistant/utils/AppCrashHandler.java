@@ -6,6 +6,16 @@
  */
 package com.wind.gifassistant.utils;
 
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.os.Build;
+import android.os.Environment;
+import android.os.Looper;
+import android.util.Log;
+import android.widget.Toast;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
@@ -18,16 +28,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.os.Build;
-import android.os.Environment;
-import android.os.Looper;
-import android.util.Log;
-import android.widget.Toast;
 
 /**
  *
@@ -106,7 +106,7 @@ public class AppCrashHandler implements UncaughtExceptionHandler {
 		if (ex == null) {
 			return false;
 		}
-		AppConfigs.cleanUpTemp(AppConfigs.APP_GIF_TEMP_FILES_FOLDER_PATH);
+		AppConfigs.cleanUpTemp(AppUtils.APP_GIF_TEMP_FILES_FOLDER_PATH);
 		//使用Toast来显示异常信息
 		new Thread() {
 			@Override
@@ -193,7 +193,7 @@ public class AppCrashHandler implements UncaughtExceptionHandler {
 			String fileName = "crash-" + time + "-" + timestamp + ".txt";
 			if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
 				
-				String path = AppConfigs.APP_CRASH_PATH + "/";
+				String path = AppUtils.APP_CRASH_PATH + "/";
 				File dir = new File(path);
 				if (!dir.exists()) {
 					dir.mkdirs();

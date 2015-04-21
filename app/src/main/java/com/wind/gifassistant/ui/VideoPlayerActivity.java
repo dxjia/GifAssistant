@@ -7,13 +7,9 @@
  */
 package com.wind.gifassistant.ui;
 
-import java.io.File;
-import java.util.LinkedList;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.media.AudioManager;
@@ -48,6 +44,7 @@ import com.wind.gifassistant.R;
 import com.wind.gifassistant.data.ExtractPicturesWorker;
 import com.wind.gifassistant.gifworker.GifMerger;
 import com.wind.gifassistant.utils.AppConfigs;
+import com.wind.gifassistant.utils.AppUtils;
 import com.wind.gifassistant.views.SoundView;
 import com.wind.gifassistant.views.SoundView.OnVolumeChangedListener;
 import com.wind.gifassistant.views.VideoView;
@@ -55,6 +52,9 @@ import com.wind.gifassistant.views.VideoView.SizeChangeLinstener;
 import com.wind.gifassistant.views.waveview.Titanic;
 import com.wind.gifassistant.views.waveview.TitanicTextView;
 import com.wind.gifassistant.views.waveview.Typefaces;
+
+import java.io.File;
+import java.util.LinkedList;
 
 /**
  * @author Djia 2014-6-30
@@ -381,7 +381,7 @@ public class VideoPlayerActivity extends Activity {
 		});
 
 		// 从intent里取videos path
-		String path = getIntent().getStringExtra(AppConfigs.KEY_PATH);
+		String path = getIntent().getStringExtra(AppUtils.KEY_PATH);
 		if (!TextUtils.isEmpty(path)) {
 			mVideoView.setVideoPath(path);
 			mCurrentVideoPath = path;
@@ -477,7 +477,7 @@ public class VideoPlayerActivity extends Activity {
 						int count = ExtractPicturesWorker.extractPicturesToFile(
 								mCurrentVideoPath, tempOutFolder, mMinPos, mMaxPos, DEFAULT_FRAME_RATE);
 						logd("extract " + count + "pictures done to encode gif");
-						String productName = AppConfigs.GIF_PRODUCTS_FOLDER_PATH
+						String productName = AppUtils.GIF_PRODUCTS_FOLDER_PATH
 								+ File.separator + gifName + ".gif";
 						// 合成图片为Gif
 						//GifMerger.encodeReasonableScale(productName, tempOutFolder, 10, handler);

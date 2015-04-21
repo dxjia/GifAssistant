@@ -1,20 +1,19 @@
 package com.wind.gifassistant.ui;
 
-import java.io.File;
-
-import com.special.ResideMenu.ResideMenu;
-import com.wind.gifassistant.utils.AppConfigs;
-import com.wind.gifassistant.utils.AppUtils;
-
 import android.content.Context;
 import android.content.Intent;
 import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnCreateContextMenuListener;
-import android.widget.BaseAdapter;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.BaseAdapter;
+
+import com.special.ResideMenu.ResideMenu;
+import com.wind.gifassistant.utils.AppUtils;
+
+import java.io.File;
 
 
 public class ListContextMenuListener  implements OnCreateContextMenuListener {
@@ -100,7 +99,7 @@ public class ListContextMenuListener  implements OnCreateContextMenuListener {
                 	} else if (type == AppUtils.FILE_TYPE_VIDEO) {
                 		intent = new Intent(mContext, VideoPlayerActivity.class);
                 	}
-            		intent.putExtra(AppConfigs.KEY_PATH, path);
+            		intent.putExtra(AppUtils.KEY_PATH, path);
             		mContext.startActivity(intent);
                     return true;
                 

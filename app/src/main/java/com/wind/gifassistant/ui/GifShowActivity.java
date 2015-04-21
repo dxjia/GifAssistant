@@ -6,14 +6,14 @@
  */
 package com.wind.gifassistant.ui;
 
-import com.wind.gifassistant.R;
-import com.wind.gifassistant.utils.AppConfigs;
-import com.wind.gifassistant.views.gifview.GifView;
-import com.wind.gifassistant.views.gifview.GifView.GifShowGravity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.wind.gifassistant.R;
+import com.wind.gifassistant.utils.AppUtils;
+import com.wind.gifassistant.views.gifview.GifView;
+import com.wind.gifassistant.views.gifview.GifView.GifShowGravity;
 
 /**
  *
@@ -39,7 +39,7 @@ public class GifShowActivity extends Activity {
          setContentView(R.layout.gif_show_activity);
          mGifView = (GifView) findViewById(R.id.gif_show);
          Intent intent = getIntent();
-         String gifPath = intent.getStringExtra(AppConfigs.KEY_PATH);
+         String gifPath = intent.getStringExtra(AppUtils.KEY_PATH);
          mGifView.setGifShowGravity(GifShowGravity.CENTER_FULL);
          mGifView.showGifImage(gifPath);
 	}
