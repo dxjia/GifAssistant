@@ -10,7 +10,7 @@ Android没有直接用于显示gif图片的原生控件（webview除外），加
 2.ResideMenu效果<br>
 3.显示Gif图片，GifView<br>
 4.视频播放，图片截取<br>
-5.将N张图片合并为一个gif图片，核心代码使用native实现<br>
+5.移植ffmpeg到android，并使用jni进行调用，通过ffmpeg command生成gif<br>
 6.提供压缩率、帧率已经residemenu背景设置<br>
 7.圆角菜单<br>
 
