@@ -208,6 +208,9 @@ public class VideoPlayerActivity extends Activity {
 				mPositionSecondTail = ms / 1000;
 				int minPos = Min(mPositionSecondTail, mPositionSecondHead);
 				int maxPos = Max(mPositionSecondTail, mPositionSecondHead);
+
+                mPositionSecondHead = minPos;
+                mPositionSecondTail = maxPos;
 				int duration = maxPos - minPos;
 
 				if (duration == 0) {
@@ -470,27 +473,18 @@ public class VideoPlayerActivity extends Activity {
 			new Thread(new Runnable() {
 				public void run() {
 					try {
-						// 创建临时文件夹，用来保存提取出来的图片帧
-						String tempOutFolder = AppConfigs.createTempFolder(gifName);
-
-						// 导出图片帧，保存的文件名为 0.jpg 1.jpg。。。
-						int count = ExtractPicturesWorker.extractPicturesToFile(
-								mCurrentVideoPath, tempOutFolder, mMinPos, mMaxPos, DEFAULT_FRAME_RATE);
-						logd("extract " + count + "pictures done to encode gif");
 						String productName = AppUtils.GIF_PRODUCTS_FOLDER_PATH
 								+ File.separator + gifName + ".gif";
-						// 合成图片为Gif
-						//GifMerger.encodeReasonableScale(productName, tempOutFolder, 10, handler);
-						GifMerger.encode(productName, tempOutFolder, 2, 10, handler);
+						/* 生产Gif */
+						GifMerger.generateGifProduct(productName, mCurrentVideoPath, mPositionSecondHead, mPositionSecondTail);
 
-						AppConfigs.cleanUpTemp(tempOutFolder);
-
+                        /* reset */
 						mPositionSecondHead = mPositionSecondTail = -1;
 					} finally {
 						handler.removeMessages(0);
-						//mWaveTitanic.cancel();
+						/* mWaveTitanic.cancel(); */
 						progressDialog.dismiss();
-						//VideoPlayerActivity.this.finish();
+						/* VideoPlayerActivity.this.finish(); */
 					}
 				}
 			}).start();

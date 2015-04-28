@@ -7,15 +7,10 @@ android {
     buildToolsVersion '20'
     defaultConfig {
         applicationId "com.wind.gifassistant"
-        minSdkVersion 7
-        targetSdkVersion 20
+        minSdkVersion 9
+        targetSdkVersion 19
         versionCode 1
         versionName "Gif-A 1.0"
-        ndk {
-            moduleName "gifflen"
-            ldLibs "log"
-            abiFilters "armeabi", "armeabi-v7a", "x86"
-        }
     }
     buildTypes {
         release {
