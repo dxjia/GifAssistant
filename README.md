@@ -27,3 +27,8 @@ Android没有直接用于显示gif图片的原生控件（webview除外），加
 ![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/5.png)
  ![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/6.png)
 ![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/7.png)
+#Reference & Thanks
+[ViewPager-Android](https://github.com/rharter/ViewPager-Android)<br>
+[AndroidResideMenu](https://github.com/SpecialCyCi/AndroidResideMenu)<br>
+[SpringIndicator](https://github.com/chenupt/SpringIndicator)<br>
+...
