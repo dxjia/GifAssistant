@@ -31,4 +31,5 @@ Android没有直接用于显示gif图片的原生控件（webview除外），加
 [ViewPager-Android](https://github.com/rharter/ViewPager-Android)<br>
 [AndroidResideMenu](https://github.com/SpecialCyCi/AndroidResideMenu)<br>
 [SpringIndicator](https://github.com/chenupt/SpringIndicator)<br>
-...
+[mojichina](https://github.com/xyzhang/mojichina)<br>
+......
