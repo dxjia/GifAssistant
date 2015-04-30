@@ -171,7 +171,7 @@ public class VideoPlayerActivity extends Activity {
 			@Override
 			public void doThings() {
 				// TODO Auto-generated method stub
-				setVideoScale(SCREEN_DEFAULT);
+				setVideoScale(SCREEN_FULL);
 			}
 
 		});
@@ -360,7 +360,7 @@ public class VideoPlayerActivity extends Activity {
 			public void onPrepared(MediaPlayer arg0) {
 				// TODO Auto-generated method stub
 
-				setVideoScale(SCREEN_DEFAULT);
+				setVideoScale(SCREEN_FULL);
 				if (controler != null && !(controler.isShowing())) {
 					showController();
 				}

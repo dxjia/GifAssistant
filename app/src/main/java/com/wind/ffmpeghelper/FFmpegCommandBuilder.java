@@ -1,4 +1,4 @@
-package com.wind.gifassistant.gifworker;
+package com.wind.ffmpeghelper;
 
 import java.util.ArrayList;
 
@@ -6,6 +6,7 @@ import java.util.ArrayList;
  * Created by 德祥 on 2015/4/28.
  */
 public class FFmpegCommandBuilder {
+
     private final static String FFMPEG_TAG = "ffmpeg";
     private final static String COMMAND_SPACE = " ";
 

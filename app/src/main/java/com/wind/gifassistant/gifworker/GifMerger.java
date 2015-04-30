@@ -8,6 +8,7 @@ package com.wind.gifassistant.gifworker;
 
 import android.util.Log;
 
+import com.wind.ffmpeghelper.FFmpegCommandBuilder;
 import com.wind.ffmpeghelper.FFmpegNativeHelper;
 import com.wind.gifassistant.utils.AppConfigs;
 
@@ -50,7 +51,8 @@ public class GifMerger {
     }
 
     /**
-     * example command: ffmpeg -ss 45 -t 2 -i sourceFile -vf scale=300:-1 -gifflags -transdiff -y output
+     * example command:
+     * ffmpeg -ss 45 -t 2 -i sourceFile -vf scale=300:-1 -gifflags -transdiff -r 15 -y output
      * @param output 输出的gif文件名
      * @param sourceFile 源文件路径，视频文件
      * @param ss 起始时间，单位s
@@ -70,6 +72,8 @@ public class GifMerger {
         commandBuilder.append("scale=300:-1");
         commandBuilder.append("-gifflags");
         commandBuilder.append("-transdiff");
+        commandBuilder.append("-r");
+        commandBuilder.append(15);
         commandBuilder.append("-y");
         commandBuilder.append(output);
 

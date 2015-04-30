@@ -129,7 +129,7 @@ public class AppConfigs {
     public static int getGifProductFrameRateSetting(SharedPreferences sp) {
         int frameRate = 0;
         if (sp != null) {
-            frameRate = sp.getInt(AppUtils.KEY_GIF_PRODUCT_FRAME_RATE, 10);
+            frameRate = sp.getInt(AppUtils.KEY_GIF_PRODUCT_FRAME_RATE, AppUtils.DEFAULT_RATE_VALUE);
             return frameRate;
         }
 

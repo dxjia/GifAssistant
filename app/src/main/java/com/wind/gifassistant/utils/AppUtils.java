@@ -37,4 +37,9 @@ public class AppUtils {
     public static final String KEY_GIF_PRODUCT_FRAME_RATE = "gif_frame_rate";
     public static final String KEY_GIF_PRODUCT_delay = "gif_delay";
     public static final String KEY_GIF_PRODUCT_scale = "gif_scale";
+
+    public static final int DEFAULT_SCALE_VALUE = 0;
+    public static final int DEFAULT_RATE_VALUE = 15;
+
+    public static final int DEFAULT_MAX_TIME_VALUE = 30;
 }
