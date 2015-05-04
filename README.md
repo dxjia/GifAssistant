@@ -34,4 +34,5 @@ Android没有直接用于显示gif图片的原生控件（webview除外），加
 [mojichina](https://github.com/xyzhang/mojichina)<br>
 [AndroidResideMenu](https://github.com/SpecialCyCi/AndroidResideMenu)<br>
 [SpringIndicator](https://github.com/chenupt/SpringIndicator)<br>
+[sweet-alert-dialog](https://github.com/pedant/sweet-alert-dialog)<br>
 ......
