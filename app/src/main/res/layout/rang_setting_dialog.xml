@@ -1,46 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:id="@+id/loading"
+    android:layout_width="290dp"
     android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_gravity="center"
     android:orientation="vertical"
-    android:background="@color/gray_light">
+    android:background="@drawable/dialog_background"
+    android:padding="5dp">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="40dp"
-        android:text="10"
-        android:id="@+id/current_rang_set_value"
-        android:padding="10dp"/>
-    <SeekBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:max="25"
-        android:indeterminate="false"
-        android:id="@+id/rang_set_seek_bar"
-        android:padding="10dp" />
+    <com.wind.gifassistant.ui.numberpicker.NumberPicker
+        android:id="@+id/numberPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
-    <LinearLayout
-        android:id="@+id/button_area"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="end|center_horizontal"
-        android:padding="10dp"
-        >
-
-        <Button
-            android:id="@+id/set_ok_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="OK"
-            android:padding="5dp"/>
-        <Button
-            android:id="@+id/set_cancel_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cancel"
-            android:padding="5dp"/>
-
-        </LinearLayout>
 </LinearLayout>

@@ -22,5 +22,7 @@
     <color name="indicator_3">#66D7B9</color>
     <color name="indicator_4">#FDBC7D</color>
     <color name="backgroud_gray">#E1E0DE</color>
+    <color name="transparent">#00000000</color>
+    <color name="dialog_bg_color">#FFFFFF</color>
 
 </resources>

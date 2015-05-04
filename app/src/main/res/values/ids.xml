@@ -4,5 +4,6 @@
     <item type="id" name="gridview" />
     <item type="id" name="webview" />
     <item type="id" name="scrollview" />
-
+    <item name="np__increment" type="id" />
+    <item name="np__decrement" type="id" />
 </resources>
