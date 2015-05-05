@@ -37,7 +37,8 @@
 2.ResideMenu效果<br>
 3.显示Gif图片，GifView<br>
 4.视频播放，图片截取<br>
-5.将N张图片合并为一个gif图片，核心代码使用native实现<br>
+5.移植ffmpeg到android，并使用jni进行调用，通过ffmpeg command生成gif<br>
+..具体移植过程可以参考我的另外一个项目<a href="https://github.com/dxjia/ffmpeg-for-android-shared-library">ffmpeg for android shared library</a><br>
 6.提供压缩率、帧率已经residemenu背景设置<br>
 7.圆角菜单<br></p>
 
@@ -46,20 +47,7 @@
 
 <p>1.使用git clone下载项目到你的本地；<br>
 2.使用Android Studio - Open an existing Android Studio project，打开clone下来的工程；<br>
-3.在local.properties文件中增加你的NDK路径<br></p>
-
-<div class="highlight highlight-xml"><pre>  ndk.dir=D\:\\android-ndk</pre></div>
-
-<p>4.build，如有error，请根据提示修改你的compileSdkVersion buildToolsVersion targetSdkVersion等，并保持app/build.gradle内的<br></p>
-
-<div class="highlight highlight-java"><pre>dependencies {
-    compile fileTree(include<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>*.jar<span class="pl-pds">'</span></span>], dir<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>libs<span class="pl-pds">'</span></span>)
-    compile <span class="pl-s"><span class="pl-pds">'</span>com.android.support:appcompat-v7:21.0.0<span class="pl-pds">'</span></span>
-    compile files(<span class="pl-s"><span class="pl-pds">'</span>libs/nineoldandroids-library-2.4.0.jar<span class="pl-pds">'</span></span>)
-}</pre></div>
-
-<p><br>
-其中的 <code>java compile 'com.android.support:appcompat-v7:21.0.0'</code> 与你的target sdkversion相匹配，如若你的环境是19，那么这里就是 v7:19<br></p>
+3.build<br></p>
 
 <h1>
 <a id="程序截图" class="anchor" href="#%E7%A8%8B%E5%BA%8F%E6%88%AA%E5%9B%BE" aria-hidden="true"><span class="octicon octicon-link"></span></a>程序截图</h1>
@@ -70,7 +58,18 @@
  <img src="https://github.com/dxjia/GifAssistant/blob/master/screenshot/4.png" alt="image">
 <img src="https://github.com/dxjia/GifAssistant/blob/master/screenshot/5.png" alt="image">
  <img src="https://github.com/dxjia/GifAssistant/blob/master/screenshot/6.png" alt="image">
-<img src="https://github.com/dxjia/GifAssistant/blob/master/screenshot/7.png" alt="image"></p>
+<img src="https://github.com/dxjia/GifAssistant/blob/master/screenshot/7.png" alt="image">
+<img src="https://github.com/dxjia/GifAssistant/blob/master/screenshot/8.png" alt="image"></p>
+
+<h1>
+<a id="reference--thanks" class="anchor" href="#reference--thanks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reference &amp; Thanks</h1>
+
+<p><a href="https://github.com/rharter/ViewPager-Android">ViewPager-Android</a><br>
+<a href="https://github.com/xyzhang/mojichina">mojichina</a><br>
+<a href="https://github.com/SpecialCyCi/AndroidResideMenu">AndroidResideMenu</a><br>
+<a href="https://github.com/chenupt/SpringIndicator">SpringIndicator</a><br>
+<a href="https://github.com/pedant/sweet-alert-dialog">sweet-alert-dialog</a><br>
+......</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/dxjia/GifAssistant">Gifassistant</a> is maintained by <a href="https://github.com/dxjia">dxjia</a>.</span>
