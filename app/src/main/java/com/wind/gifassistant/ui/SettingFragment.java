@@ -28,11 +28,21 @@ public class SettingFragment extends Fragment {
     private LinearLayout mGifFrameRateSetting;
     private ResideMenu mResideMenu;
 
-    SharedPreferences mSharedPreferences = null;
+    private Context mContext = null;
+
+    private SharedPreferences mSharedPreferences = null;
+
+    public SettingFragment() {
+    }
+
+    public void setContext(Context context) {
+        mContext = context;
+    }
 
     public void setResideMenu(ResideMenu resideMenu) {
         mResideMenu = resideMenu;
     }
+
     @Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -57,9 +67,13 @@ public class SettingFragment extends Fragment {
         if(mGifFrameRateSetting != null) {
             mGifFrameRateSetting.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    // TODO: show the seek bar dialog
-                    Intent intent = new Intent(getActivity().getBaseContext(), RangSetting.class);
-                    startActivity(intent);
+                    // TODO: show the rang setting dialog
+                    if (mContext != null) {
+                        RangSettingDialog dialog = new RangSettingDialog(mContext);
+                        dialog.setTitle("Seletct Gif Rate");
+                        dialog.setRang(10, 25);
+                        dialog.show();
+                    }
                 }
             });
         }

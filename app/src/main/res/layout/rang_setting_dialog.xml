@@ -9,7 +9,15 @@
     android:background="@drawable/dialog_background"
     android:padding="5dp">
 
-    <com.wind.gifassistant.ui.numberpicker.NumberPicker
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="26sp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="18dp"
+        android:id="@+id/title" />
+
+    <com.wind.gifassistant.ui.textpicker.TextPicker
         android:id="@+id/numberPicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

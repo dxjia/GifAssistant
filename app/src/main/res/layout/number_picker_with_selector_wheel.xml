@@ -19,10 +19,10 @@
 
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <view class="com.wind.gifassistant.ui.numberpicker.NumberPicker$CustomEditText"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+    <view class="com.wind.gifassistant.ui.textpicker.TextPicker$CustomEditText"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="?android:attr/textColorPrimary"
-        android:id="@+id/np__numberpicker_input"
+        android:id="@+id/np_textpicker_input"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"

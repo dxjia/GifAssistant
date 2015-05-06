@@ -49,13 +49,6 @@
 
         </activity>
 
-        <activity
-            android:name=".ui.RangSetting"
-            android:label="RangSetting"
-            android:theme="@style/DialogTheme.NumberPicker.Dark"
-        >
-
-        </activity>
 
     </application>
 

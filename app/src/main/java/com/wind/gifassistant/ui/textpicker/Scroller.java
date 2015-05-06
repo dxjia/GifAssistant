@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wind.gifassistant.ui.numberpicker;
+package com.wind.gifassistant.ui.textpicker;
 
 import android.content.Context;
 import android.hardware.SensorManager;

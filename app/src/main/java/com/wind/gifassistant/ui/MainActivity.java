@@ -157,6 +157,7 @@ public class MainActivity extends FragmentActivity  implements View.OnClickListe
         	if (mCurrentFragmentShow != CURRENT_FRAGMENT_SHOW_SETTINGS_LIST) {
                 SettingFragment setting = new SettingFragment();
                 setting.setResideMenu(resideMenu);
+                setting.setContext(MainActivity.this);
         	    changeFragment(setting);
         	    mCurrentFragmentShow = CURRENT_FRAGMENT_SHOW_SETTINGS_LIST;
         	}
