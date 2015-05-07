@@ -26,6 +26,7 @@ public class SettingFragment extends Fragment {
     private ImageView mBackgroudIcon;
 
     private LinearLayout mGifFrameRateSetting;
+    private LinearLayout mGifMaxTimeLengthSetting;
     private ResideMenu mResideMenu;
 
     private Context mContext = null;
@@ -70,8 +71,27 @@ public class SettingFragment extends Fragment {
                     // TODO: show the rang setting dialog
                     if (mContext != null) {
                         RangSettingDialog dialog = new RangSettingDialog(mContext);
-                        dialog.setTitle("Seletct Gif Rate");
-                        dialog.setRang(10, 25);
+                        dialog.setDialogTitle(R.string.gif_rate_setting_dialog_title);
+                        dialog.setTips(R.string.rate_rang_setting_tips);
+                        dialog.setUnitText(R.string.gif_rate_unit);
+                        dialog.setRangListener(new RateRangSettingListener(getActivity(), mSharedPreferences));
+                        dialog.show();
+                    }
+                }
+            });
+        }
+
+        mGifMaxTimeLengthSetting = (LinearLayout) gifProductsSettingArea.findViewById(R.id.gif_max_time_length_setting_area);
+        if(mGifMaxTimeLengthSetting != null) {
+            mGifMaxTimeLengthSetting.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    // TODO: show the rang setting dialog
+                    if (mContext != null) {
+                        RangSettingDialog dialog = new RangSettingDialog(mContext);
+                        dialog.setDialogTitle(R.string.gif_max_length_setting_dialog_title);
+                        dialog.setTips(R.string.max_time_setting_tips);
+                        dialog.setUnitText(R.string.gif_max_time_length_unit);
+                        dialog.setRangListener(new MaxTimeRangSettingListener(getActivity(), mSharedPreferences));
                         dialog.show();
                     }
                 }

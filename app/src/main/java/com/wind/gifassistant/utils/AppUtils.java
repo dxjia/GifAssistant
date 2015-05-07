@@ -37,9 +37,18 @@ public class AppUtils {
     public static final String KEY_GIF_PRODUCT_FRAME_RATE = "gif_frame_rate";
     public static final String KEY_GIF_PRODUCT_delay = "gif_delay";
     public static final String KEY_GIF_PRODUCT_scale = "gif_scale";
+    public static final String KEY_GIF_PRODUCT_MAX_TIME = "max_time";
 
     public static final int DEFAULT_SCALE_VALUE = 0;
-    public static final int DEFAULT_RATE_VALUE = 15;
 
-    public static final int DEFAULT_MAX_TIME_VALUE = 30;
+
+    public static final int DEFAULT_RATE_VALUE = 15;
+    public static final int DEFAULT_RATE_MIN_VALUE = 10;
+    public static final int DEFAULT_RATE_MAX_VALUE = 25;
+
+    public static final int DEFAULT_MAX_TIME_VALUE = 15;
+    public static final int DEFAULT_MAX_TIME_MAX_VALUE = 20;
+    public static final int DEFAULT_MAX_TIME_MIN_VALUE = 2;
+
+
 }

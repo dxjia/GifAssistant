@@ -53,11 +53,11 @@ public class GifProductsScanTask extends AsyncTask<Void, Void, ArrayList<String>
 	@Override
 	protected ArrayList<String> doInBackground(Void... params) {
 		if (mSimulateSleepThread) {
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-			}
-		}
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+            }
+        }
 		ArrayList<String> result = new ArrayList<String>();
 		try {
 			List<File> gifFiles = getGifFileSortByTime(AppUtils.GIF_PRODUCTS_FOLDER_PATH);

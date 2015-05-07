@@ -12,6 +12,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnPreparedListener;
@@ -41,7 +42,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wind.gifassistant.R;
-import com.wind.gifassistant.data.ExtractPicturesWorker;
 import com.wind.gifassistant.gifworker.GifMerger;
 import com.wind.gifassistant.utils.AppConfigs;
 import com.wind.gifassistant.utils.AppUtils;
@@ -63,8 +63,7 @@ import java.util.LinkedList;
  */
 public class VideoPlayerActivity extends Activity {
 
-	private final static String TAG = AppConfigs.APP_TAG
-			+ "VideoPlayerActivity";
+	private final static String TAG = "VideoPlayerActivity";
 	private final static boolean DEBUG = true;
 
 	public static LinkedList<MovieInfo> mPlayList = new LinkedList<MovieInfo>();
@@ -117,6 +116,8 @@ public class VideoPlayerActivity extends Activity {
 	private TitanicTextView mWaveTextView;
 	private Titanic mWaveTitanic;
 	private TextView mProcessTipTextView;
+
+    private SharedPreferences mSharedPreferences;
 
 	/** Called when the activity is first created. */
 	@SuppressWarnings("deprecation")
@@ -200,6 +201,7 @@ public class VideoPlayerActivity extends Activity {
 			}
 		});
 
+        mSharedPreferences = getSharedPreferences(getPackageName(), Context.MODE_PRIVATE);
 		mActionBtn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -217,12 +219,13 @@ public class VideoPlayerActivity extends Activity {
 					return;
 				}
 
-				if (duration > MAX_DURATION_FOR_GIF_WORKER) {
+                int max = AppConfigs.getGifProductMaxTimeSetting(mSharedPreferences);
+				if (duration > max) {
 					Toast.makeText(
 							VideoPlayerActivity.this,
-							"很抱歉,你选定的时间区间超过了" + MAX_DURATION_FOR_GIF_WORKER
+							"很抱歉,你选定的时间区间超过了" + max
 									+ "S，将按最大值处理。", Toast.LENGTH_LONG).show();
-					duration = MAX_DURATION_FOR_GIF_WORKER;
+					duration = max;
 					maxPos = minPos + duration;
 				}
 
@@ -475,8 +478,10 @@ public class VideoPlayerActivity extends Activity {
 					try {
 						String productName = AppUtils.GIF_PRODUCTS_FOLDER_PATH
 								+ File.separator + gifName + ".gif";
+
 						/* 生产Gif */
-						GifMerger.generateGifProduct(productName, mCurrentVideoPath, mPositionSecondHead, mPositionSecondTail);
+                        int rate = AppConfigs.getGifProductFrameRateSetting(mSharedPreferences);
+						GifMerger.generateGifProduct(productName, mCurrentVideoPath, mPositionSecondHead, mPositionSecondTail, rate);
 
                         /* reset */
 						mPositionSecondHead = mPositionSecondTail = -1;
@@ -707,7 +712,6 @@ public class VideoPlayerActivity extends Activity {
 	/**
 	 * 得到自定义的wave progress Dialog
 	 * @param context
-	 * @param msg
 	 * @return
 	 */
 	public Dialog createLoadingDialog(Context context) {

@@ -136,6 +136,15 @@ public class AppConfigs {
         return frameRate;
     }
 
+    public static boolean setGifProductFrameRateSetting(SharedPreferences sp, int current) {
+        if (sp != null) {
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putInt(AppUtils.KEY_GIF_PRODUCT_FRAME_RATE, current);
+            return editor.commit();
+        }
+        return false;
+    }
+
     public static int getGifProductScaleSetting(SharedPreferences sp) {
         int scale = 0;
         if (sp != null) {
@@ -154,5 +163,25 @@ public class AppConfigs {
         }
 
         return delay;
+    }
+
+    public static int getGifProductMaxTimeSetting(SharedPreferences sp) {
+        int maxtime = AppUtils.DEFAULT_MAX_TIME_VALUE;
+        if (sp != null) {
+            maxtime = sp.getInt(AppUtils.KEY_GIF_PRODUCT_MAX_TIME, AppUtils.DEFAULT_MAX_TIME_VALUE);
+            return maxtime;
+        }
+
+        return maxtime;
+    }
+
+    public static boolean setGifProductMaxTimeSetting(SharedPreferences sp, int maxTime) {
+        if (sp != null) {
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putInt(AppUtils.KEY_GIF_PRODUCT_MAX_TIME, maxTime);
+            return editor.commit();
+        }
+
+        return false;
     }
 }

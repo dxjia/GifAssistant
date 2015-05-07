@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">GifAssistant</string>
+    <string name="gif_rate_setting_dialog_title">Select Gif Rate</string>
+    <string name="gif_rate_unit">Frames/S</string>
+    <string name="gif_max_length_setting_dialog_title">Set Max Time</string>
+    <string name="gif_max_time_length_unit">S</string>
+    <string name="rate_rang_setting_tips">Select larger, the GIF bigger</string>
+    <string name="max_time_setting_tips">The more, the bigger Gif</string>
 </resources>

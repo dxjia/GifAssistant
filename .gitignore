@@ -33,3 +33,6 @@ Thumbs.db
 .idea/li
 .gradle
 build/
+
+# log files
+.log
