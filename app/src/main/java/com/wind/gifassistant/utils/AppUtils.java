@@ -50,5 +50,7 @@ public class AppUtils {
     public static final int DEFAULT_MAX_TIME_MAX_VALUE = 20;
     public static final int DEFAULT_MAX_TIME_MIN_VALUE = 2;
 
+    public static final String SHARED_PREFERENCE_NAME = "gif_product_infos";
+
 
 }

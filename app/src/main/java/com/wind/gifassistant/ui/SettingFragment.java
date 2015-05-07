@@ -53,7 +53,7 @@ public class SettingFragment extends Fragment {
 	}
 
 	void setUpViews() {
-        mSharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
+        mSharedPreferences = mContext.getSharedPreferences(AppUtils.SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE);//getActivity().getPreferences(Context.MODE_PRIVATE);
 		mBackgroudSetting =(LinearLayout) mParentView.findViewById(R.id.reside_menu_backgroud_setting_area);
         mBackgroudIcon = (ImageView) mBackgroudSetting.findViewById(R.id.reside_menu_backgroud_setting_icon);
         setBackgroudIconThumbail();

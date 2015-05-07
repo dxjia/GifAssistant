@@ -20,6 +20,7 @@ import com.special.ResideMenu.ResideMenu;
 import com.special.ResideMenu.ResideMenuItem;
 import com.wind.gifassistant.R;
 import com.wind.gifassistant.utils.AppConfigs;
+import com.wind.gifassistant.utils.AppUtils;
 
 /**
  * @author Djia 2014-6-27 main activity -- GIF list and Video list
@@ -75,7 +76,7 @@ public class MainActivity extends FragmentActivity  implements View.OnClickListe
         // attach to current activity;
         resideMenu = new ResideMenu(this);
         // get backgroud image from setting
-        Uri backgroudUri = AppConfigs.getResideMenuConfig(getSharedPreferences(getLocalClassName(), Context.MODE_PRIVATE));
+        Uri backgroudUri = AppConfigs.getResideMenuConfig(getSharedPreferences(AppUtils.SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE));
         if (backgroudUri != null) {
             resideMenu.setBackground(backgroudUri);
         } else {

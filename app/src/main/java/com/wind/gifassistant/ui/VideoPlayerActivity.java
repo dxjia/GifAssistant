@@ -201,7 +201,7 @@ public class VideoPlayerActivity extends Activity {
 			}
 		});
 
-        mSharedPreferences = getSharedPreferences(getPackageName(), Context.MODE_PRIVATE);
+        mSharedPreferences = getSharedPreferences(AppUtils.SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE);
 		mActionBtn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -220,6 +220,8 @@ public class VideoPlayerActivity extends Activity {
 				}
 
                 int max = AppConfigs.getGifProductMaxTimeSetting(mSharedPreferences);
+                logd(mSharedPreferences.toString());
+                logd("rate = " + max);
 				if (duration > max) {
 					Toast.makeText(
 							VideoPlayerActivity.this,
@@ -481,6 +483,8 @@ public class VideoPlayerActivity extends Activity {
 
 						/* 生产Gif */
                         int rate = AppConfigs.getGifProductFrameRateSetting(mSharedPreferences);
+                        logd(mSharedPreferences.toString());
+                        logd("rate = " + rate);
 						GifMerger.generateGifProduct(productName, mCurrentVideoPath, mPositionSecondHead, mPositionSecondTail, rate);
 
                         /* reset */
