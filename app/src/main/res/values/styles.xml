@@ -73,4 +73,7 @@
         <item name="numberPickerStyle">@style/NPWidget.Holo.NumberPicker</item>
     </style>
 
+    <style name="custom_checkbox" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_selector</item>
+    </style>
 </resources>

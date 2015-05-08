@@ -7,4 +7,11 @@
     <string name="gif_max_time_length_unit">秒</string>
     <string name="max_time_setting_tips">最大时长用来限制从视频中截取的片段的最大范围，最少为2秒。时间越长，生成的图片就会越大，内容也越丰富。</string>
     <string name="rate_rang_setting_tips">帧率为GIF图片每秒的图片张数，帧率越大，制作出来的GIF就会越流畅连贯。人眼能区分帧数的上限为25帧，也就是高于25帧/秒的帧率人眼已经区分不出来了。</string>
+    <string name="gif_quality_setting_dialog_title">设定图片质量</string>
+    <string name="original_quality">原图</string>
+    <string name="quality_original">原图</string>
+    <string name="quality_original_2">2倍缩小</string>
+    <string name="quality_original_3">3倍缩小</string>
+    <string name="quality_original_4">4倍缩小</string>
+    <string name="quality_original_5">5倍缩小</string>
 </resources>

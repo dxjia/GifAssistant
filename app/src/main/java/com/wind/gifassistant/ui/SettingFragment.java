@@ -27,6 +27,7 @@ public class SettingFragment extends Fragment {
 
     private LinearLayout mGifFrameRateSetting;
     private LinearLayout mGifMaxTimeLengthSetting;
+    private LinearLayout mGifScaleSetting;
     private ResideMenu mResideMenu;
 
     private Context mContext = null;
@@ -97,6 +98,21 @@ public class SettingFragment extends Fragment {
                 }
             });
         }
+
+        mGifScaleSetting = (LinearLayout) mParentView.findViewById(R.id.scale_setting_area);
+        if(mGifScaleSetting != null) {
+            mGifScaleSetting.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    // TODO: show the rang setting dialog
+                    if (mContext != null) {
+                        GifScaleSettingDialog dialog = new GifScaleSettingDialog(mContext);
+                        dialog.setDialogTitle(R.string.gif_quality_setting_dialog_title);
+                        dialog.show();
+                    }
+                }
+            });
+        }
+
 	}
 
     private void showImageFileChooser() {

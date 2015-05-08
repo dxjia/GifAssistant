@@ -7,4 +7,11 @@
     <string name="gif_max_time_length_unit">S</string>
     <string name="rate_rang_setting_tips">Select larger, the GIF bigger</string>
     <string name="max_time_setting_tips">The more, the bigger Gif</string>
+    <string name="gif_quality_setting_dialog_title">Select Gif Quality</string>
+    <string name="original_quality">Original</string>
+    <string name="quality_original">Original</string>
+    <string name="quality_original_2">W/2:H/2</string>
+    <string name="quality_original_3">W/3:H/3</string>
+    <string name="quality_original_4">W/4:H/4</string>
+    <string name="quality_original_5">W/5:H/5</string>
 </resources>

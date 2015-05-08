@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gif_quality_setting"
+    android:layout_width="290dp"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_background"
+    android:padding="5dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="28dp"
+        android:id="@+id/title"
+        android:textColor="@color/graywhite"
+        android:text="@string/gif_quality_setting_dialog_title"/>
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_gravity="left">
+        <RadioButton
+            android:id="@+id/quality_1"
+            style="@style/custom_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:layout_gravity="left"
+            android:text="@string/quality_original"
+            android:padding="2dp"/>
+
+        <RadioButton
+            android:id="@+id/quality_2"
+            style="@style/custom_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:layout_gravity="left"
+            android:text="@string/quality_original_2"
+            android:padding="2dp"/>
+        <RadioButton
+            android:id="@+id/quality_3"
+            style="@style/custom_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:layout_gravity="left"
+            android:text="@string/quality_original_3"
+            android:padding="2dp"/>
+
+        <RadioButton
+            android:id="@+id/quality_4"
+            style="@style/custom_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:checked="false"
+            android:text="@string/quality_original_4"
+            android:padding="2dp"/>
+        <RadioButton
+            android:id="@+id/quality_5"
+            style="@style/custom_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:checked="false"
+            android:text="@string/quality_original_5"
+            android:padding="2dp"/>
+
+        </RadioGroup>
+
+
+</LinearLayout>

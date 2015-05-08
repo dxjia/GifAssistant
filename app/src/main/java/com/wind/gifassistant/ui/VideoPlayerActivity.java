@@ -107,11 +107,10 @@ public class VideoPlayerActivity extends Activity {
 
 	private String mCurrentVideoPath;
 	// 最大的时间选择区间，以S为单位
-	private static final int MAX_DURATION_FOR_GIF_WORKER = 30;
 	private int mPositionSecondHead = -1;
 	private int mPositionSecondTail = -1;
 	private EditText mGifProductNameEditText;
-	private static final int DEFAULT_FRAME_RATE = 2;
+
 	
 	private TitanicTextView mWaveTextView;
 	private Titanic mWaveTitanic;
@@ -172,7 +171,7 @@ public class VideoPlayerActivity extends Activity {
 			@Override
 			public void doThings() {
 				// TODO Auto-generated method stub
-				setVideoScale(SCREEN_FULL);
+				setVideoScale(SCREEN_DEFAULT);
 			}
 
 		});
@@ -365,7 +364,7 @@ public class VideoPlayerActivity extends Activity {
 			public void onPrepared(MediaPlayer arg0) {
 				// TODO Auto-generated method stub
 
-				setVideoScale(SCREEN_FULL);
+				setVideoScale(SCREEN_DEFAULT);
 				if (controler != null && !(controler.isShowing())) {
 					showController();
 				}
@@ -483,9 +482,10 @@ public class VideoPlayerActivity extends Activity {
 
 						/* 生产Gif */
                         int rate = AppConfigs.getGifProductFrameRateSetting(mSharedPreferences);
-                        logd(mSharedPreferences.toString());
-                        logd("rate = " + rate);
-						GifMerger.generateGifProduct(productName, mCurrentVideoPath, mPositionSecondHead, mPositionSecondTail, rate);
+                        int scale = AppConfigs.getGifProductScaleSetting(mSharedPreferences);
+
+						GifMerger.generateGifProduct(productName, mCurrentVideoPath,
+                                mPositionSecondHead, mPositionSecondTail, rate, scale);
 
                         /* reset */
 						mPositionSecondHead = mPositionSecondTail = -1;
@@ -642,10 +642,10 @@ public class VideoPlayerActivity extends Activity {
 		switch (flag) {
 		case SCREEN_FULL:
 
-			Log.d(TAG, "screenWidth: " + mScreenWidth + " screenHeight: "
+			/*Log.d(TAG, "screenWidth: " + mScreenWidth + " screenHeight: "
 					+ mScreenHeight);
 			mVideoView.setVideoScale(mScreenWidth, mScreenHeight);
-			getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+			getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);*/
 
 			break;
 
@@ -670,7 +670,7 @@ public class VideoPlayerActivity extends Activity {
 
 			mVideoView.setVideoScale(mWidth, mHeight);
 
-			getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+			//getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 			break;
 		}

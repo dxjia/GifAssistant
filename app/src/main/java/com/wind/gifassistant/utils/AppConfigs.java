@@ -148,22 +148,23 @@ public class AppConfigs {
     public static int getGifProductScaleSetting(SharedPreferences sp) {
         int scale = 0;
         if (sp != null) {
-            scale = sp.getInt(AppUtils.KEY_GIF_PRODUCT_scale, 2);
+            scale = sp.getInt(AppUtils.KEY_GIF_PRODUCT_SCALE, 2);
             return scale;
         }
 
         return scale;
     }
 
-    public static int getGifProductDelaySetting(SharedPreferences sp) {
-        int delay = 0;
+    public static boolean setGifProductScaleSetting(SharedPreferences sp, int scale) {
         if (sp != null) {
-            delay = sp.getInt(AppUtils.KEY_GIF_PRODUCT_delay, 10);
-            return delay;
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putInt(AppUtils.KEY_GIF_PRODUCT_SCALE, scale);
+            return editor.commit();
         }
 
-        return delay;
+        return false;
     }
+
 
     public static int getGifProductMaxTimeSetting(SharedPreferences sp) {
         int maxtime = AppUtils.DEFAULT_MAX_TIME_VALUE;
@@ -184,4 +185,5 @@ public class AppConfigs {
 
         return false;
     }
+
 }
