@@ -52,7 +52,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/default_ptr_rotate"
+                    android:src="@mipmap/ic_gif_frame_rate"
                     android:paddingLeft="10dp" />
 
                 <TextView
@@ -76,7 +76,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/default_ptr_rotate"
+                    android:src="@mipmap/ic_time_length"
                     android:paddingLeft="10dp" />
 
                 <TextView
@@ -104,7 +104,7 @@
                 android:id="@+id/imageView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/default_ptr_rotate" />
+                android:src="@mipmap/ic_gif_scale" />
 
             <TextView
                 android:id="@+id/textView4"

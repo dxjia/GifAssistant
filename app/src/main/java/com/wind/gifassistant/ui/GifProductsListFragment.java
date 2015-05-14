@@ -91,11 +91,10 @@ public class GifProductsListFragment extends Fragment  implements DataLoadCallBa
 			}
 		});
 		
-		ListContextMenuListener gifListMenuCreateListener = new ListContextMenuListener(
+		/*ListContextMenuListener gifListMenuCreateListener = new ListContextMenuListener(
 				vContext, mGifProductsListAdapter, AppUtils.FILE_TYPE_GIF,
 				this, mResideMenu);
-		actualListView.setOnCreateContextMenuListener(gifListMenuCreateListener);
-    
+		actualListView.setOnCreateContextMenuListener(gifListMenuCreateListener);*/
 		loadData(vContext);
     }
 
@@ -106,4 +105,10 @@ public class GifProductsListFragment extends Fragment  implements DataLoadCallBa
 					mGifPullListView, mGifProductsListAdapter, false).execute();
 		}
 	}
+
+    @Override
+    public void onResume() {
+        loadData(getActivity());
+        super.onResume();
+    }
 }
