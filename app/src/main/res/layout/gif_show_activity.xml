@@ -34,16 +34,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             fab:fab_icon="@mipmap/ic_fab_delete"
-            fab:fab_colorNormal="@color/blue_semi_transparent"
-            fab:fab_colorPressed="@color/blue_semi_transparent_pressed"/>
+            fab:fab_colorNormal="@color/blue_semi"
+            fab:fab_colorPressed="@color/blue_semi_pressed"/>
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/action_share"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             fab:fab_icon="@mipmap/ic_fab_shared"
-            fab:fab_colorNormal="@color/blue_semi_transparent"
-            fab:fab_colorPressed="@color/blue_semi_transparent_pressed"/>
+            fab:fab_colorNormal="@color/blue_semi"
+            fab:fab_colorPressed="@color/blue_semi_pressed"/>
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 </RelativeLayout>

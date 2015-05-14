@@ -25,6 +25,8 @@
     <color name="transparent">#00000000</color>
     <color name="dialog_bg_color">#FFFFFF</color>
     <color name="dialogTextColor">#ff2973ff</color>
+    <color name="blue_semi">#ff5677fc</color>
+    <color name="blue_semi_pressed">#ff738ffe</color>
     <color name="blue_semi_transparent">#805677fc</color>
     <color name="blue_semi_transparent_pressed">#80738ffe</color>
     <color name="green">#8000e999</color>

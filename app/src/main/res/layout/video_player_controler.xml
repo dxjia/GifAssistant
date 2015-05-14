@@ -7,13 +7,12 @@
     android:gravity="center"
     android:background="@color/control_back"
     android:focusable="true">
-    <LinearLayout 
+    <LinearLayout
 	    android:orientation="horizontal"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:gravity="center_horizontal"
-	    android:layout_marginTop="1dip"
-	    android:layout_marginBottom="1dip"
+
     >
 	    <TextView
 	    	android:id="@+id/has_played"
@@ -22,7 +21,7 @@
 	    	android:layout_gravity="center_vertical"
 	    	android:text="00:00:00"
             android:textColor="#ff11bfff" />
-	    <SeekBar 
+	    <SeekBar
 	    	android:id="@+id/seekbar"
 	    	android:layout_width="wrap_content"
 	    	android:layout_height="wrap_content"
@@ -38,51 +37,31 @@
 	    	android:text="00:00:00"
             android:textColor="#ff11bfff" />
 	</LinearLayout>
-	
-	<LinearLayout 
+
+	<LinearLayout
 	    android:orientation="horizontal"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:gravity="center"
     >
     <ImageButton
-    	android:id="@+id/button1"
-    	android:layout_width="wrap_content"
+    	android:id="@+id/play_pause"
+    	android:layout_width="64dp"
 	    android:layout_height="wrap_content"
 	    android:layout_gravity="center_vertical"
-	    android:layout_weight="1"
 	    android:src="@mipmap/eject"
 	    android:scaleType="fitCenter"
 	    android:background="#00000000"
-    />
+        android:layout_marginRight="15dp" />
     <ImageButton
-    	android:id="@+id/button2"
-    	android:layout_width="wrap_content"
+    	android:id="@+id/cut"
+    	android:layout_width="64dp"
 	    android:layout_height="wrap_content"
 	    android:src="@mipmap/eject"
 	    android:layout_gravity="center_vertical"
-	    android:layout_weight="1"
 	    android:scaleType="fitCenter"
 	    android:background="#00000000"
-    />
-    <ImageButton
-    	android:id="@+id/button3"
-    	android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_gravity="center_vertical"
-	    android:layout_weight="1"
-	    android:scaleType="fitCenter"
-	    android:background="#00000000"
-    />
-    <ImageButton
-    	android:id="@+id/button5"
-    	android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_gravity="center_vertical"
-	    android:layout_weight="1"
-	    android:src="@mipmap/soundenable"
-	    android:scaleType="fitCenter"
-	    android:background="#00000000"
-    />
+        android:layout_marginLeft="15dp" />
+
     </LinearLayout>
 </LinearLayout>

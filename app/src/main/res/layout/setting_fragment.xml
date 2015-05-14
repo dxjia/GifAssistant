@@ -19,7 +19,7 @@
                 android:id="@+id/reside_menu_backgroud_setting_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/default_ptr_rotate" />
+                android:src="@mipmap/ic_backgroud_setting" />
 
             <TextView
                 android:id="@+id/reside_menu_backgroud_setting_tip_text"

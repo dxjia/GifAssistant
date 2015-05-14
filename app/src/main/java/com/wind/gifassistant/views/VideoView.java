@@ -23,10 +23,6 @@ package com.wind.gifassistant.views;
  * limitations under the License.
  */
 
-import java.io.IOException;
-
-import com.wind.gifassistant.utils.AppConfigs;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -45,6 +41,10 @@ import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.MediaController;
 import android.widget.MediaController.MediaPlayerControl;
+
+import com.wind.gifassistant.utils.AppConfigs;
+
+import java.io.IOException;
  
 /**
  * Displays a video file.  The VideoView class
