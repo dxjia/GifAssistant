@@ -12,7 +12,7 @@ Android没有直接用于显示gif图片的原生控件（webview除外），加
 4.视频播放，图片截取<br>
 5.移植ffmpeg到android，并使用jni进行调用，通过ffmpeg command生成gif<br>
 ..具体移植过程可以参考我的另外一个项目[ffmpeg for android shared library](https://github.com/dxjia/ffmpeg-for-android-shared-library)<br>
-6.提供压缩率、帧率已经residemenu背景设置<br>
+6.提供压缩率、帧率以及residemenu背景设置<br>
 7.圆角菜单<br>
 
 #程序编译
