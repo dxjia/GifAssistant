@@ -9,6 +9,8 @@ package com.wind.gifassistant.ui;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.media.ThumbnailUtils;
+import android.provider.MediaStore.Video.Thumbnails;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -104,7 +106,8 @@ public class VideosListAdapter extends BaseAdapter {
 		}
 		
 		VideosInfo videoInfo = new VideosInfo(mVideosPaths.get(position));
-		holder.thumb.setImageBitmap(ExtractPicturesWorker.extractBitmap(mVideosPaths.get(position), 0));
+		//holder.thumb.setImageBitmap(ExtractPicturesWorker.extractBitmap(mVideosPaths.get(position), 0));
+		holder.thumb.setImageBitmap(ThumbnailUtils.createVideoThumbnail(mVideosPaths.get(position), Thumbnails.MINI_KIND));
 		holder.name.setText("文件名：" + videoInfo.getName());
 		holder.time.setText("时间：" + videoInfo.getLastModifyTime());
 		holder.duration.setText("时长：" + videoInfo.getDuration());
