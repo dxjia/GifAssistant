@@ -14,7 +14,6 @@ Android没有直接用于显示gif图片的原生控件（webview除外），加
 ..具体移植过程可以参考我的另外一个项目[ffmpeg for android shared library](https://github.com/dxjia/ffmpeg-for-android-shared-library)<br>
 6.提供压缩率、帧率以及residemenu背景设置<br>
 7.圆角菜单<br>
-![Img](https://github.com/dxjia/GifAssistant/blob/master/screenshot/show.gif)
 
 #程序编译
 1.使用git clone下载项目到你的本地；<br>
@@ -22,10 +21,6 @@ Android没有直接用于显示gif图片的原生控件（webview除外），加
 3.build<br>
 
 #程序截图
-![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/1.png)
- ![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/2.png)
-![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/3.png)
- ![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/4.png)
 ![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/5.png)
  ![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/6.png)
 ![image](https://github.com/dxjia/GifAssistant/blob/master/screenshot/7.png)
