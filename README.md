@@ -1,3 +1,5 @@
+# Deprecated
+   早期代码，不再维护。
 # GifAssistant
 Android练手项目，可以浏览GIF，或从视频中截取一段制作为GIF图片。
 
