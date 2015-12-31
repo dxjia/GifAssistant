@@ -66,7 +66,7 @@ public class VideoPlayerActivity extends Activity {
     private ImageButton mPlayPauseBtn = null;
 
     private View controlView = null;
-    private static PopupWindow controler = null;
+//    private static PopupWindow controler = null;
 
     private static int mScreenWidth = 0;
     private static int mScreenHeight = 0;
@@ -114,9 +114,9 @@ public class VideoPlayerActivity extends Activity {
     }
 
     private void initViews() {
-        controlView = getLayoutInflater().inflate(
-                R.layout.video_player_controler, null);
-        controler = new PopupWindow(controlView);
+        controlView = findViewById(R.id.video_control_view);
+        hideController();
+        //controler = new PopupWindow(controlView);
         mDurationTextView = (TextView) controlView.findViewById(R.id.duration);
         mPlayedTextView = (TextView) controlView.findViewById(R.id.has_played);
 
@@ -187,7 +187,7 @@ public class VideoPlayerActivity extends Activity {
             public void onPrepared(MediaPlayer arg0) {
                 // TODO Auto-generated method stub
                 setVideoScale(SCREEN_DEFAULT);
-                if (controler != null && !(controler.isShowing())) {
+                if (controlView != null && controlView.getVisibility() != View.VISIBLE) {
                     showController();
                 }
 
@@ -333,7 +333,7 @@ public class VideoPlayerActivity extends Activity {
     private final static int PROGRESS_CHANGED = 0;
     private final static int HIDE_CONTROLER = 1;
 
-    private static Handler myHandler = new Handler() {
+    private Handler myHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             // TODO Auto-generated method stub
@@ -386,18 +386,18 @@ public class VideoPlayerActivity extends Activity {
         }
 
         if (event.getAction() == MotionEvent.ACTION_UP) {
-            if (controler == null || mGifSettingMenu == null) {
+            if (controlView == null || mGifSettingMenu == null) {
                 return super.onTouchEvent(event);
             }
 
-            if (!controler.isShowing() && mGifSettingMenu.isExpanded()) {
+            if (controlView.getVisibility() != View.VISIBLE && mGifSettingMenu.isExpanded()) {
                 if (mMaxDistance < DEFAULT_MOVE_FLAG) {
                     mGifSettingMenu.toggle();
                 }
                 return super.onTouchEvent(event);
             }
 
-            if (!(controler.isShowing())) {
+            if (controlView.getVisibility() != View.VISIBLE) {
                 showController();
                 hideControllerDelay();
             } else {
@@ -440,8 +440,8 @@ public class VideoPlayerActivity extends Activity {
     protected void onDestroy() {
         // TODO Auto-generated method stub
 
-        if (controler.isShowing()) {
-            controler.dismiss();
+        if (controlView.getVisibility() == View.VISIBLE) {
+            controlView.setVisibility(View.GONE);
         }
 
         myHandler.removeMessages(PROGRESS_CHANGED);
@@ -457,9 +457,9 @@ public class VideoPlayerActivity extends Activity {
         mControlHeight = mScreenHeight / 7;
     }
 
-    private static void hideController() {
-        if (controler.isShowing()) {
-            controler.dismiss();
+    private void hideController() {
+        if (controlView.getVisibility() == View.VISIBLE) {
+            controlView.setVisibility(View.GONE);
         }
 
     }
@@ -469,9 +469,8 @@ public class VideoPlayerActivity extends Activity {
     }
 
     private void showController() {
-        if (controler != null && mVideoView.isShown()) {
-            controler.showAtLocation(mVideoView, Gravity.BOTTOM, 0, 0);
-            controler.update(0, 0, mScreenWidth, mControlHeight);
+        if (controlView != null && mVideoView.isShown()) {
+            controlView.setVisibility(View.VISIBLE);
         }
     }
 

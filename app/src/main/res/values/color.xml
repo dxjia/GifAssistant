@@ -2,7 +2,7 @@
 <resources>
 
     <color name="background">#ffffff</color>
-    <color name="control_back">#6464643D</color>
+    <color name="control_back">#88000000</color>
     <color name="si_default_text_color">#FF0000</color>
     <color name="si_default_text_color_selected">#FF00FF</color>
     <color name="si_default_indicator_bg">#ee9999</color>
