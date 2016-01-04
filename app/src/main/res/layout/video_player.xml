@@ -9,8 +9,10 @@
 
     <com.wind.gifassistant.views.VideoView
         android:id="@+id/vv"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <com.getbase.floatingactionbutton.FloatingActionsMenu
         android:id="@+id/gif_setting_floating_menu"
