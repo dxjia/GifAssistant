@@ -2,56 +2,49 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:orientation="vertical">
     <!-- title bar -->
-    <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/layout_top">
-        <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:background="#2ea3fe"/>
-        <FrameLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimaryDark">
-            <Button
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
-                    android:background="@drawable/titlebar_menu_selector"
-                    android:id="@+id/title_bar_left_menu"
-                    android:layout_gravity="left|center_vertical"
-                    android:layout_marginLeft="10dp"/>
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:text="GIF Assistant"
-                    android:textSize="24sp"
-                    android:textColor="@color/white"
-                    android:layout_gravity="center"/>
-            <Button
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
-                    android:background="@drawable/titlebar_menu_selector"
-                    android:id="@+id/title_bar_right_menu"
-                    android:layout_gravity="right|center_vertical"
-                    android:layout_marginRight="10dp"/>
-        </FrameLayout>
-        <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="4dp"
-                android:background="#ebebeb"/>
-    </LinearLayout>
+
 
     <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:id="@+id/main_fragment">
+        android:layout_width="match_parent"
+        android:layout_height="48dip"
+        android:background="@color/colorPrimaryDark"
+        android:elevation="2dp">
+
+        <ImageButton
+            android:id="@+id/title_bar_left_menu"
+            style="@android:style/Widget.Material.ActionButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/title_bar_menu" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:text="GIF Assistant"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+        <ImageButton
+            android:id="@+id/title_bar_right_menu"
+            style="@android:style/Widget.Material.ActionButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/ic_fab_setting" />
     </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/main_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
 
 </LinearLayout>

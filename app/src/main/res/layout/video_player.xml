@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:layout_gravity="center_vertical"
+    android:layout_gravity="center"
     android:background="@color/background"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:gravity="center">
 
     <com.wind.gifassistant.views.VideoView
         android:id="@+id/vv"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <com.getbase.floatingactionbutton.FloatingActionsMenu
         android:id="@+id/gif_setting_floating_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="right"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
@@ -53,4 +55,10 @@
             fab:fab_colorPressed="@color/blue_semi_transparent_pressed"
             fab:fab_icon="@mipmap/ic_time_length" />
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
-</RelativeLayout>
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        layout="@layout/video_player_controler"
+        android:layout_gravity="bottom"
+        />
+</FrameLayout>

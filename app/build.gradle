@@ -3,12 +3,12 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
     }
-    compileSdkVersion 19
-    buildToolsVersion '20'
+    compileSdkVersion 22
+    buildToolsVersion '23.0.2'
     defaultConfig {
         applicationId "com.wind.gifassistant"
-        minSdkVersion 16
-        targetSdkVersion 19
+        minSdkVersion 21
+        targetSdkVersion 22
         versionCode 1
         versionName "Gif-A 1.0"
     }
